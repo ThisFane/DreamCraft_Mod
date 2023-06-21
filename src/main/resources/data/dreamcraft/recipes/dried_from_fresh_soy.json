@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "dreamcraft:fresh_soy_beans"
+    }
+  ],
+  "result": "dreamcraft:dried_soy_beans",
+  "experience": 1,
+  "cookingtime": 150
+}

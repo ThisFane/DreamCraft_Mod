@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "dreamcraft:block/separator_side_active",
+    "side": "dreamcraft:block/separator_side_active",
+    "top": "dreamcraft:block/separator_top",
+    "bottom": "minecraft:block/furnace_top"
+  }
+}

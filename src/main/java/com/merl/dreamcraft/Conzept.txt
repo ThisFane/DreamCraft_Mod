@@ -1,0 +1,43 @@
+Separator
+-Crafting Recipe
+-UI Texture
+-Block Entity
+
+Soy
+-Crafting Recipe
+-Drying on Table or Furnace
+
+Wind Wand
+-How to charge
+-Crafting/How to get
+
+Emotions
+-What to do with them? Maybe Extract Magic from them?
+
+
+Dreamstone
+-How to get them
+-Use
+
+Dreamsand
+-Make dreamcatcher(block) extract it from sleeping entities
+
+Dreaming Flower
+-Early Game Dreamsand source
+-Furnace Recipe for Dreamsand
+
+SWORD_OF_RAGE
+-Rework the sword of Rage from explosion to AOE
+
+Cortex Brick
+-More Colors
+-How to craft?
+
+Cortex Block
+-What does it do?
+-How to get it
+
+Dream Pickaxe
+-New Name
+-Texture
+-Fix enchantments

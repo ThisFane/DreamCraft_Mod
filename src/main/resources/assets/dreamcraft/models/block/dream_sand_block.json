@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dreamcraft:block/dream_sand_block"
+  }
+}
