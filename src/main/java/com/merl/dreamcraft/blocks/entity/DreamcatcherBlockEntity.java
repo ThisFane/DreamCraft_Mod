@@ -10,12 +10,17 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BedBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.swing.text.html.parser.Entity;
 import java.util.ArrayList;
+
+import static net.minecraft.world.level.block.BedBlock.OCCUPIED;
 
 
 public class DreamcatcherBlockEntity extends BlockEntity {
@@ -58,7 +63,7 @@ public class DreamcatcherBlockEntity extends BlockEntity {
     }
 
     public static void timeCheck(Level level){
-        if(level.getDayTime() <= 1200){
+        if(level.isDay()){
         DayReset = true;
         }
     }
@@ -68,9 +73,12 @@ public class DreamcatcherBlockEntity extends BlockEntity {
         if(level.getBlockState(blockPos.below()).is(BlockTags.BEDS)) {
             BlockState bed = level.getBlockState(blockPos.below());
             Player nearestplayer = level.getNearestPlayer(TargetingConditions.forNonCombat(), blockPos.below().getX(), blockPos.below().getY(), blockPos.below().getZ());
+            BlockEntity bedEntity = level.getBlockEntity(blockPos.below());
+
+
 
             if(DayReset){
-                if (nearestplayer.isSleeping()) {
+                if (bed.getValue(OCCUPIED)) {
                     ItemEntity item = new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModItems.DREAMSAND.get()));
                     level.addFreshEntity(item);
                     DayReset = false;

@@ -22,7 +22,6 @@ public class ModBlocks {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, DreamCraft.MODID);
 
     public static final RegistryObject<Block> DREAMCATCHER = registerBlock("dreamcatcher", () -> new DreamcatcherBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).strength(1f)));
-    public static final RegistryObject<Block> STELLAR_COLLECTOR = registerBlock("stellar_collector", () -> new Stellar_Collector(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f)));
 
     public static final RegistryObject<Block> SEPARATOR = registerBlock("separator", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f)));
     public static final RegistryObject<Block> DRYING_TABLE = registerBlock("drying_table", () -> new DryingTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f).noOcclusion()));

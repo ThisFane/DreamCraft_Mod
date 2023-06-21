@@ -40,7 +40,6 @@ public class ModCreativeModeTabs {
                 entries.accept(ModItems.DRIED_SOY_BEANS.get());
                 entries.accept(ModBlocks.DREAMING_FLOWER.get());
 
-                entries.accept(ModBlocks.STELLAR_COLLECTOR.get());
                 entries.accept(ModBlocks.CORTEX_BLOCK.get());
                 entries.accept(ModBlocks.CORTEX_BRICK.get());
                 entries.accept(ModBlocks.DREAMCATCHER.get());
