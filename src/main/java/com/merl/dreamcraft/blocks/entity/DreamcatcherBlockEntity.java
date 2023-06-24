@@ -32,6 +32,7 @@ import static net.minecraft.world.level.block.BedBlock.OCCUPIED;
 public class DreamcatcherBlockEntity extends BlockEntity {
 
 
+    private static List<LivingEntity> entityMem = new ArrayList<>();
     private static boolean DayReset = true;
 
     public DreamcatcherBlockEntity(BlockPos blockPos, BlockState blockState) {
@@ -70,7 +71,10 @@ public class DreamcatcherBlockEntity extends BlockEntity {
     }
 
     public static void timeCheck(Level level) {
-        DayReset = level.isDay() || DayReset;
+        //DayReset = level.isDay() || DayReset;
+        if(level.isDay()){
+            entityMem.clear();
+        }
     }
 
 
@@ -85,11 +89,10 @@ public class DreamcatcherBlockEntity extends BlockEntity {
 
             for(int x = 0; x < nearByEntities.size(); x++){
                 if(nearByEntities.get(x).isSleeping()){
-                    System.out.println("is entity" + nearByEntities.get(x));
-                    if(DayReset){
+                    if(!entityMem.contains(nearByEntities.get(x))){
                         ItemEntity item = new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModItems.DREAMSAND.get()));
                         level.addFreshEntity(item);
-                        System.out.println("Dayrest");
+                        entityMem.add(nearByEntities.get(x));
                     }
                 }
             }
