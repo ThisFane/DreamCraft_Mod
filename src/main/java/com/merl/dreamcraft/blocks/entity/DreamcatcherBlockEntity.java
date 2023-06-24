@@ -5,19 +5,32 @@ import com.merl.dreamcraft.items.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.EntityGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.entity.EntityTypeTest;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
+import static net.minecraft.commands.arguments.EntityArgument.getEntities;
 import static net.minecraft.world.level.block.BedBlock.OCCUPIED;
 
 
 public class DreamcatcherBlockEntity extends BlockEntity {
+
 
     private static boolean DayReset = true;
 
@@ -30,7 +43,7 @@ public class DreamcatcherBlockEntity extends BlockEntity {
             return;
         }
 
-        System.out.println(level.getDayTime());
+        //System.out.println(level.getDayTime());
         spawnSand(blockPos, level);
         timeCheck(level);
 
@@ -56,10 +69,8 @@ public class DreamcatcherBlockEntity extends BlockEntity {
         super.load(nbt);
     }
 
-    public static void timeCheck(Level level){
-        if(level.isDay()){
-        DayReset = true;
-        }
+    public static void timeCheck(Level level) {
+        DayReset = level.isDay() || DayReset;
     }
 
 
@@ -67,15 +78,19 @@ public class DreamcatcherBlockEntity extends BlockEntity {
         if(level.getBlockState(blockPos.below()).is(BlockTags.BEDS)) {
             BlockState bed = level.getBlockState(blockPos.below());
             Player nearestplayer = level.getNearestPlayer(TargetingConditions.forNonCombat(), blockPos.below().getX(), blockPos.below().getY(), blockPos.below().getZ());
-            BlockEntity bedEntity = level.getBlockEntity(blockPos.below());
+            BlockEntity bedBlockEntity = level.getBlockEntity(blockPos.below());
+            List<LivingEntity> nearByEntities = level.getEntitiesOfClass(LivingEntity.class, bedBlockEntity.getRenderBoundingBox().move(0,0.5,0));
 
 
 
-            if(DayReset){
-                if (bed.getValue(OCCUPIED)) {
-                    ItemEntity item = new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModItems.DREAMSAND.get()));
-                    level.addFreshEntity(item);
-                    DayReset = false;
+            for(int x = 0; x < nearByEntities.size(); x++){
+                if(nearByEntities.get(x).isSleeping()){
+                    System.out.println("is entity" + nearByEntities.get(x));
+                    if(DayReset){
+                        ItemEntity item = new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModItems.DREAMSAND.get()));
+                        level.addFreshEntity(item);
+                        System.out.println("Dayrest");
+                    }
                 }
             }
         }
