@@ -23,7 +23,7 @@ import java.util.UUID;
 public class DreamcatcherBlockEntity extends BlockEntity {
 
 
-    private static List<UUID> entityMem = new ArrayList<java.util.UUID>();
+    private static List<UUID> entityMemory = new ArrayList<java.util.UUID>();
 
     public DreamcatcherBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(ModBlockEntities.DREAMCADREAMCATCHER_BLOCK_ENTITY.get(), blockPos, blockState);
@@ -63,7 +63,7 @@ public class DreamcatcherBlockEntity extends BlockEntity {
     public static void timeCheck(Level level) {
         //DayReset = level.isDay() || DayReset;
         if(level.isDay()){
-            entityMem.clear();
+            entityMemory.clear();
         }
 
     }
@@ -77,13 +77,12 @@ public class DreamcatcherBlockEntity extends BlockEntity {
             List<LivingEntity> nearByEntities = level.getEntitiesOfClass(LivingEntity.class, bedBlockEntity.getRenderBoundingBox().move(0,0.5,0));
 
 
-
-            for(int x = 0; x < nearByEntities.size(); x++){
-                if(nearByEntities.get(x).isSleeping()){
-                    if(!entityMem.contains(nearByEntities.get(x).getUUID())){
+            for (LivingEntity nearByEntity : nearByEntities) {
+                if (nearByEntity.isSleeping()) {
+                    if (!entityMemory.contains(nearByEntity.getUUID())) {
                         ItemEntity item = new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModItems.DREAMSAND.get()));
                         level.addFreshEntity(item);
-                        entityMem.add(nearByEntities.get(x).getUUID());
+                        entityMemory.add(nearByEntity.getUUID());
                     }
                 }
             }

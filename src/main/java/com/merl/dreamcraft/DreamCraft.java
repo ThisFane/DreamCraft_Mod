@@ -40,9 +40,6 @@ public class DreamCraft
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
 
-    public static ResourceKey<Level> DREAM_DIMENSION;
-
-
 
     public DreamCraft()
     {
@@ -66,7 +63,6 @@ public class DreamCraft
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        DREAM_DIMENSION = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(DreamCraft.MODID, "dream_dimension"));
 
 
     }
