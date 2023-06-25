@@ -37,7 +37,7 @@ public class DreamCraft
     public static final String RESOURCE_PREFIX = MODID + ":";
 
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
 
 

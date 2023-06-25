@@ -1,6 +1,7 @@
 package com.merl.dreamcraft.blocks.entity;
 
 
+import com.merl.dreamcraft.DreamCraft;
 import com.merl.dreamcraft.items.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -75,7 +76,6 @@ public class DreamcatcherBlockEntity extends BlockEntity {
             Player nearestplayer = level.getNearestPlayer(TargetingConditions.forNonCombat(), blockPos.below().getX(), blockPos.below().getY(), blockPos.below().getZ());
             BlockEntity bedBlockEntity = level.getBlockEntity(blockPos.below());
             List<LivingEntity> nearByEntities = level.getEntitiesOfClass(LivingEntity.class, bedBlockEntity.getRenderBoundingBox().move(0,0.5,0));
-
 
             for (LivingEntity nearByEntity : nearByEntities) {
                 if (nearByEntity.isSleeping()) {

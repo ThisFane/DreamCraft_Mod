@@ -24,7 +24,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DREAMCATCHER = registerBlock("dreamcatcher", () -> new DreamcatcherBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).strength(1f)));
 
     public static final RegistryObject<Block> SEPARATOR = registerBlock("separator", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f)));
-    public static final RegistryObject<Block> DRYING_TABLE = registerBlock("drying_table", () -> new DryingTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f).noOcclusion()));
+    public static final RegistryObject<Block> DRYING_TABLE = registerBlock("drying_tables", () -> new DryingTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f).noOcclusion()));
 
     public static final RegistryObject<Block> CORTEX_BLOCK = registerBlock("cortex_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f)));
     public static final RegistryObject<Block> CORTEX_BRICK = registerBlock("cortex_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f)));
