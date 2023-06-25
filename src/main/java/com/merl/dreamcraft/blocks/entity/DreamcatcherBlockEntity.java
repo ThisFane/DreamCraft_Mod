@@ -5,35 +5,25 @@ import com.merl.dreamcraft.items.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.EntityGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.entity.EntityTypeTest;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
-
-import static net.minecraft.commands.arguments.EntityArgument.getEntities;
-import static net.minecraft.world.level.block.BedBlock.OCCUPIED;
+import java.util.UUID;
 
 
 public class DreamcatcherBlockEntity extends BlockEntity {
 
 
-    private static List<LivingEntity> entityMem = new ArrayList<>();
-    private static boolean DayReset = true;
+    private static List<UUID> entityMem = new ArrayList<java.util.UUID>();
 
     public DreamcatcherBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(ModBlockEntities.DREAMCADREAMCATCHER_BLOCK_ENTITY.get(), blockPos, blockState);
@@ -75,6 +65,7 @@ public class DreamcatcherBlockEntity extends BlockEntity {
         if(level.isDay()){
             entityMem.clear();
         }
+
     }
 
 
@@ -89,10 +80,10 @@ public class DreamcatcherBlockEntity extends BlockEntity {
 
             for(int x = 0; x < nearByEntities.size(); x++){
                 if(nearByEntities.get(x).isSleeping()){
-                    if(!entityMem.contains(nearByEntities.get(x))){
+                    if(!entityMem.contains(nearByEntities.get(x).getUUID())){
                         ItemEntity item = new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModItems.DREAMSAND.get()));
                         level.addFreshEntity(item);
-                        entityMem.add(nearByEntities.get(x));
+                        entityMem.add(nearByEntities.get(x).getUUID());
                     }
                 }
             }
