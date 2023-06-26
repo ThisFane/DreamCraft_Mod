@@ -39,8 +39,8 @@ public class ModItems {
 
 
 
-    public static RegistryObject<Item> SUN = ITEMS.register("sun", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.EPIC)));
-    public static RegistryObject<Item> MOON = ITEMS.register("moon", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.EPIC)));
+    public static RegistryObject<Item> SUN = ITEMS.register("sun", () -> new SunItem(new Item.Properties().rarity(Rarity.EPIC)));
+    public static RegistryObject<Item> MOON = ITEMS.register("moon", () -> new MoonItem(new Item.Properties().rarity(Rarity.EPIC)));
 
 
     //Tools
