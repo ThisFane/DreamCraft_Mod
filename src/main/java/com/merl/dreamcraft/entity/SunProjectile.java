@@ -39,7 +39,6 @@ public class SunProjectile extends ThrowableItemProjectile {
     @Override
     public void tick() {
 
-
         if(150 < lifetime){
             this.kill();
         }else {
