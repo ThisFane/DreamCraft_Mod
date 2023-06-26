@@ -30,6 +30,15 @@ public class ModCreativeModeTabs {
                 entries.accept(ModItems.MOON.get());
                 entries.accept(ModItems.AMETHYST_SCRAPS.get());
 
+                entries.accept(ModItems.AMETHYST_RUNE.get());
+                entries.accept(ModItems.LAPIS_LAZULI_RUNE.get());
+                entries.accept(ModItems.REDSTONE_RUNE.get());
+                entries.accept(ModItems.ENDER_RUNE.get());
+                entries.accept(ModItems.EMERALD_RUNE.get());
+                entries.accept(ModItems.DIAMOND_RUNE.get());
+                entries.accept(ModItems.CORRUPTED_RUNE.get());
+
+
 
                 entries.accept(ModItems.DREAM_PICK.get());
                 entries.accept(ModItems.SUN_STAFF.get());

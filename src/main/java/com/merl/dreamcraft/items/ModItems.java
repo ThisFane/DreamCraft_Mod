@@ -28,6 +28,16 @@ public class ModItems {
 
 
 
+    public static RegistryObject<Item> AMETHYST_RUNE = ITEMS.register("amethyst_rune", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> CORRUPTED_RUNE = ITEMS.register("corrupted_rune", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> DIAMOND_RUNE = ITEMS.register("diamond_rune", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> EMERALD_RUNE = ITEMS.register("emerald_rune", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> ENDER_RUNE = ITEMS.register("ender_rune", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> LAPIS_LAZULI_RUNE = ITEMS.register("lapis_lazuli_rune", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> REDSTONE_RUNE = ITEMS.register("redstone_rune", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+
+
+
 
     public static RegistryObject<Item> SUN = ITEMS.register("sun", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.EPIC)));
     public static RegistryObject<Item> MOON = ITEMS.register("moon", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.EPIC)));
