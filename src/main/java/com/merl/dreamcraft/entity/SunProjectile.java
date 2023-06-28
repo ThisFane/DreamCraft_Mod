@@ -1,16 +1,19 @@
 package com.merl.dreamcraft.entity;
 
 import com.merl.dreamcraft.items.ModItems;
-import net.minecraft.core.particles.ItemParticleOption;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class SunProjectile extends ThrowableItemProjectile {
     public SunProjectile(EntityType<? extends Snowball> pEntityType, Level pLevel) {
@@ -21,7 +24,7 @@ public class SunProjectile extends ThrowableItemProjectile {
 
 
     @Override
-    protected Item getDefaultItem() {
+    protected @NotNull Item getDefaultItem() {
         return ModItems.SUN.get().asItem();
     }
 
@@ -36,6 +39,7 @@ public class SunProjectile extends ThrowableItemProjectile {
     }
 
 
+
     @Override
     public void tick() {
 
@@ -45,11 +49,13 @@ public class SunProjectile extends ThrowableItemProjectile {
             lifetime++;
         }
 
+        setNoGravity(true);
+        mobGravity(level());
 
-        System.out.println("tick");
-        if(getDeltaMovement().x <= 0.4 && getDeltaMovement().y <= 0.4 && getDeltaMovement().z <= 0.4 ){
+        //System.out.println("tick");
+        if(getDeltaMovement().x <= 0.1 && getDeltaMovement().y <= 0.1 && getDeltaMovement().z <= 0.1 ){
             setDeltaMovement(0,0,0);
-            setNoGravity(true);
+
 
 
 
@@ -61,7 +67,19 @@ public class SunProjectile extends ThrowableItemProjectile {
     }
 
 
+    public void mobGravity(Level level){
+        AABB areaOfEffect = getBoundingBoxForCulling().expandTowards(1000,1000,1000);
+        List<LivingEntity> nearByEntities = level.getEntitiesOfClass(LivingEntity.class, areaOfEffect);
 
+        for (LivingEntity nearByEntity : nearByEntities) {
+            if(!nearByEntity.getUUID().equals(this.getUUID())) {
+                if(!(nearByEntity.getType() == EntityType.SNOWBALL)) {
+                    nearByEntity.addDeltaMovement(new Vec3(0, 0, 1));
+                }
+            }
+        }
+
+    }
 
 
 
