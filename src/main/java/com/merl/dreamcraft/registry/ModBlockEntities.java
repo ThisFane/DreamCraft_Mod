@@ -1,7 +1,7 @@
-package com.merl.dreamcraft.blocks.entity;
+package com.merl.dreamcraft.registry;
 
 import com.merl.dreamcraft.DreamCraft;
-import com.merl.dreamcraft.blocks.ModBlocks;
+import com.merl.dreamcraft.blocks.entity.DreamcatcherBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

@@ -1,21 +1,16 @@
 package com.merl.dreamcraft;
 
-import com.merl.dreamcraft.blocks.ModBlocks;
-import com.merl.dreamcraft.blocks.entity.ModBlockEntities;
+import com.merl.dreamcraft.registry.ModBlocks;
+import com.merl.dreamcraft.registry.ModBlockEntities;
 import com.merl.dreamcraft.effect.ModEffects;
 import com.merl.dreamcraft.items.DreamPickAxeItem;
-import com.merl.dreamcraft.items.ModCreativeModeTabs;
-import com.merl.dreamcraft.items.ModItems;
+import com.merl.dreamcraft.registry.ModCreativeModeTabs;
+import com.merl.dreamcraft.registry.ModItems;
 import com.merl.dreamcraft.loot.ModLootModifiers;
 import com.mojang.logging.LogUtils;
 
-import com.mojang.serialization.Codec;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;

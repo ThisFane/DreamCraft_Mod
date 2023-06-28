@@ -1,9 +1,10 @@
-package com.merl.dreamcraft.items;
+package com.merl.dreamcraft.registry;
 
 
 
 import com.merl.dreamcraft.DreamCraft;
-import com.merl.dreamcraft.blocks.ModBlocks;
+import com.merl.dreamcraft.registry.ModBlocks;
+import com.merl.dreamcraft.registry.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -45,6 +46,7 @@ public class ModCreativeModeTabs {
                 entries.accept(ModItems.WIND_WAND.get());
                 entries.accept(ModItems.SWORD_OF_RAGE.get());
                 entries.accept(ModItems.AMETHYST_SWORD.get());
+                entries.accept(ModItems.ANTITRADERWAND.get());
 
                 entries.accept(ModItems.FRESH_SOY_BEANS.get());
                 entries.accept(ModItems.DRIED_SOY_BEANS.get());

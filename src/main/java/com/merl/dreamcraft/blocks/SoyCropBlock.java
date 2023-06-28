@@ -1,7 +1,6 @@
 package com.merl.dreamcraft.blocks;
 
-import com.merl.dreamcraft.items.ModItems;
-import net.minecraft.world.item.Items;
+import com.merl.dreamcraft.registry.ModItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;

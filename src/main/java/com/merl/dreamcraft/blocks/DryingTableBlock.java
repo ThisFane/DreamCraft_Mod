@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 public class DryingTableBlock extends BaseEntityBlock {
-    protected DryingTableBlock(Properties p_49224_) {
+    public DryingTableBlock(Properties p_49224_) {
         super(p_49224_);
     }
 

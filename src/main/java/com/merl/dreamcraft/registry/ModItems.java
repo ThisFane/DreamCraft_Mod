@@ -1,7 +1,7 @@
-package com.merl.dreamcraft.items;
+package com.merl.dreamcraft.registry;
 
 import com.merl.dreamcraft.DreamCraft;
-import com.merl.dreamcraft.blocks.ModBlocks;
+import com.merl.dreamcraft.items.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -49,6 +49,8 @@ public class ModItems {
     public static final RegistryObject<Item> SUN_STAFF = ITEMS.register("sun_staff", () -> new SunWandItem(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1).durability(WindWandItem.Durability())));
     public static RegistryObject<Item> DREAM_PICK = ITEMS.register("dream_pick", () -> new DreamPickAxeItem(Tiers.DIAMOND, 1, 2.8f, new Item.Properties().stacksTo(1)));
     public static RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword", () -> new SwordItem(Tiers.DIAMOND, 8, 2.8f, new Item.Properties().stacksTo(1)));
+    public static RegistryObject<Item> ANTITRADERWAND = ITEMS.register("anti_trader_wand", () -> new AntiTraderStick(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
+
 
 
     //Crops

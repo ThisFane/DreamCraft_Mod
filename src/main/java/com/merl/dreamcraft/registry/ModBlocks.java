@@ -1,9 +1,9 @@
-package com.merl.dreamcraft.blocks;
+package com.merl.dreamcraft.registry;
 
 import com.merl.dreamcraft.DreamCraft;
-import com.merl.dreamcraft.blocks.entity.BeamBlock;
-import com.merl.dreamcraft.blocks.entity.ModBlockEntities;
-import com.merl.dreamcraft.items.ModItems;
+import com.merl.dreamcraft.blocks.DreamcatcherBlock;
+import com.merl.dreamcraft.blocks.DryingTableBlock;
+import com.merl.dreamcraft.blocks.SoyCropBlock;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

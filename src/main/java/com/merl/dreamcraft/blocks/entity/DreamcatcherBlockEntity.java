@@ -1,8 +1,8 @@
 package com.merl.dreamcraft.blocks.entity;
 
 
-import com.merl.dreamcraft.DreamCraft;
-import com.merl.dreamcraft.items.ModItems;
+import com.merl.dreamcraft.registry.ModItems;
+import com.merl.dreamcraft.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.BlockTags;

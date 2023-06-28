@@ -2,20 +2,17 @@ package com.merl.dreamcraft.blocks;
 
 
 import com.merl.dreamcraft.blocks.entity.DreamcatcherBlockEntity;
-import com.merl.dreamcraft.blocks.entity.ModBlockEntities;
-import net.minecraft.client.renderer.block.model.BlockModel;
+import com.merl.dreamcraft.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.Property;
 import org.jetbrains.annotations.Nullable;
 
 
