@@ -1,7 +1,11 @@
 package com.merl.dreamcraft.items;
 
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -31,7 +35,14 @@ public class WindWandItem extends Item {
 
 
 
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity entity, int pSlotId, boolean pIsSelected) {
+    public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slotId, boolean isSelected) {
+
+        float f7 = entity.getYRot();
+        float f = entity.getXRot();
+        float f1 = -Mth.sin(f7 * ((float) Math.PI / 180F)) * Mth.cos(f * ((float) Math.PI / 180F));
+        float f2 = -Mth.sin(f * ((float) Math.PI / 180F));
+        float f3 = Mth.cos(f7 * ((float) Math.PI / 180F)) * Mth.cos(f * ((float) Math.PI / 180F));
+
 
         if(entity.onGround()){
             staffFlight = false;

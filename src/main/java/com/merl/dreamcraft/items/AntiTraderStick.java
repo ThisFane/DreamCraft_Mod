@@ -33,7 +33,6 @@ public class AntiTraderStick extends Item {
         for (LivingEntity nearByEntity : nearByEntities) {
             if(nearByEntity.getType() == EntityType.WANDERING_TRADER) {
                 target = new Vec3(nearByEntity.getBlockX(), nearByEntity.getBlockY(), nearByEntity.getBlockZ());
-                //level.explode(entity, null, null, target, 10, false, Level.ExplosionInteraction.TNT);
                 nearByEntity.kill();
             }
         }
