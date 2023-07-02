@@ -1,6 +1,5 @@
 Separator
 -Crafting Recipe
--UI Texture
 -Block Entity
 
 Soy
@@ -13,7 +12,6 @@ Wind Wand
 
 Emotions
 -What to do with them? Maybe Extract Magic from them?
-
 
 Dreamstone
 -How to get them

@@ -1,10 +1,7 @@
 package com.merl.dreamcraft.registry;
 
 
-
 import com.merl.dreamcraft.DreamCraft;
-import com.merl.dreamcraft.registry.ModBlocks;
-import com.merl.dreamcraft.registry.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -19,6 +16,7 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().title(Component.translatable("itemGroup." + DreamCraft.MODID + "dreamcraft")).icon(
                     () -> new ItemStack(ModItems.DREAMSAND.get())).displayItems((enabledFeatures, entries) -> {
                 entries.accept(ModItems.DREAMSTONE.get());
+                entries.accept(ModItems.LIVING_INGOT.get());
                 entries.accept(ModItems.DREAMSAND.get());
                 entries.accept(ModItems.ANGER.get());
                 entries.accept(ModItems.SADNESS.get());
@@ -57,7 +55,7 @@ public class ModCreativeModeTabs {
                 entries.accept(ModBlocks.CORTEX_BRICK.get());
                 entries.accept(ModBlocks.DREAMCATCHER.get());
                 entries.accept(ModBlocks.DRYING_TABLE.get());
-                entries.accept(ModBlocks.SEPARATOR.get());
+                entries.accept(ModBlocks.STONE_SEPARATOR.get());
 
     }).build());
 

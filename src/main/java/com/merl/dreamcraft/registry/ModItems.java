@@ -14,6 +14,8 @@ public class ModItems {
 
     public static RegistryObject<Item> DREAMSTONE = ITEMS.register("dreamstone", () -> new DreamstoneItem(new Item.Properties().rarity(Rarity.EPIC)));
     public static RegistryObject<Item> DREAMSAND = ITEMS.register("dreamsand", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> LIVING_INGOT = ITEMS.register("living_ingot", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.EPIC)));
+
 
     //Emotions form sand
     public static RegistryObject<Item> ANGER = ITEMS.register("anger", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));

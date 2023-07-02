@@ -4,6 +4,7 @@ import com.merl.dreamcraft.DreamCraft;
 import com.merl.dreamcraft.blocks.DreamcatcherBlock;
 import com.merl.dreamcraft.blocks.DryingTableBlock;
 import com.merl.dreamcraft.blocks.SoyCropBlock;
+import com.merl.dreamcraft.blocks.StoneSeparatorBlock;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -23,7 +24,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DREAMCATCHER = registerBlock("dreamcatcher", () -> new DreamcatcherBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).strength(1f)));
 
-    public static final RegistryObject<Block> SEPARATOR = registerBlock("separator", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f)));
+    public static final RegistryObject<Block> STONE_SEPARATOR = registerBlock("stone_separator", () -> new StoneSeparatorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f)));
     public static final RegistryObject<Block> DRYING_TABLE = registerBlock("drying_tables", () -> new DryingTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f).noOcclusion()));
 
     public static final RegistryObject<Block> CORTEX_BLOCK = registerBlock("cortex_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1f)));
@@ -32,7 +33,7 @@ public class ModBlocks {
 
 
 
-    public static final RegistryObject<Block> DREAM_SAND_BLOCK = registerBlock("dream_sand_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(6f)));
+    public static final RegistryObject<Block> DREAM_SAND_BLOCK = registerBlock("dream_sand_block", () -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND).strength(6f).sound(SoundType.SAND)));
 
     public static final RegistryObject<Block> SOY_PLANT = registerBlockItem("soy_plant", () -> new SoyCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
