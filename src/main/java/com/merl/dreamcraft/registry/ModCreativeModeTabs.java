@@ -25,9 +25,11 @@ public class ModCreativeModeTabs {
                 entries.accept(ModItems.HAPPINESS.get());
                 entries.accept(ModItems.SURPRISE.get());
                 entries.accept(ModItems.LIFE_ESSENCE.get());
+                entries.accept(ModItems.AIR_ESSENCE.get());
                 entries.accept(ModItems.SUN.get());
                 entries.accept(ModItems.MOON.get());
                 entries.accept(ModItems.AMETHYST_SCRAPS.get());
+
 
                 entries.accept(ModItems.AMETHYST_RUNE.get());
                 entries.accept(ModItems.LAPIS_LAZULI_RUNE.get());
@@ -56,6 +58,8 @@ public class ModCreativeModeTabs {
                 entries.accept(ModBlocks.DREAMCATCHER.get());
                 entries.accept(ModBlocks.DRYING_TABLE.get());
                 entries.accept(ModBlocks.STONE_SEPARATOR.get());
+                entries.accept(ModBlocks.HOLDER.get());
+                entries.accept(ModBlocks.ALUCINOR_LEAVES.get());
 
     }).build());
 

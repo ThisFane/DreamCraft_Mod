@@ -25,6 +25,9 @@ public class ModItems {
     public static RegistryObject<Item> HAPPINESS = ITEMS.register("happiness", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
     public static RegistryObject<Item> SURPRISE = ITEMS.register("surprise", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
     public static RegistryObject<Item> LIFE_ESSENCE = ITEMS.register("life_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> AIR_ESSENCE = ITEMS.register("air_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+
+
 
     public static RegistryObject<Item> AMETHYST_SCRAPS = ITEMS.register("amethyst_scraps", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
 

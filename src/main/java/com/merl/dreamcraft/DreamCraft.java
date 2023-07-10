@@ -82,6 +82,8 @@ public class DreamCraft
         {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOY_PLANT.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.DREAMING_FLOWER.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.HOLDER.get(), RenderType.cutout());
+
         }
     }
 }
