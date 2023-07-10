@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fresh_soy_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamcraft:fresh_soy_beans"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:fresh_soy_beans_from_smelting_fresh_soy_beans"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_fresh_soy_beans",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:fresh_soy_beans_from_smelting_fresh_soy_beans"
+    ]
+  },
+  "sends_telemetry_event": false
+}

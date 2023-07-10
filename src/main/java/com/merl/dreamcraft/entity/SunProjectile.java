@@ -50,7 +50,6 @@ public class SunProjectile extends ThrowableItemProjectile {
         setNoGravity(true);
         mobGravity(level());
 
-        //System.out.println("tick");
         if(getDeltaMovement().x <= 0.1 && getDeltaMovement().y <= 0.1 && getDeltaMovement().z <= 0.1 ){
             setDeltaMovement(0,0,0);
 

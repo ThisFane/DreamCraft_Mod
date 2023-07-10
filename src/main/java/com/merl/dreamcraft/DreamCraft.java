@@ -1,16 +1,13 @@
 package com.merl.dreamcraft;
 
-import com.merl.dreamcraft.registry.ModBlocks;
-import com.merl.dreamcraft.registry.ModBlockEntities;
 import com.merl.dreamcraft.effect.ModEffects;
 import com.merl.dreamcraft.items.DreamPickAxeItem;
+import com.merl.dreamcraft.loot.ModLootModifiers;
+import com.merl.dreamcraft.registry.ModBlockEntities;
+import com.merl.dreamcraft.registry.ModBlocks;
 import com.merl.dreamcraft.registry.ModCreativeModeTabs;
 import com.merl.dreamcraft.registry.ModItems;
-import com.merl.dreamcraft.loot.ModLootModifiers;
 import com.mojang.logging.LogUtils;
-
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -20,8 +17,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
 import org.slf4j.Logger;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DreamCraft.MODID)
@@ -80,9 +77,6 @@ public class DreamCraft
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOY_PLANT.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.DREAMING_FLOWER.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.HOLDER.get(), RenderType.cutout());
 
         }
     }
