@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -28,6 +29,7 @@ public class HolderBlock extends BaseEntityBlock {
     }
     
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 13, 16);
+    private static final int INPUTSLOT = 0;
     
     
     @Override
@@ -54,7 +56,15 @@ public class HolderBlock extends BaseEntityBlock {
     
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        BlockEntity holder = pLevel.getBlockEntity(pPos);
         
+        if (holder instanceof HolderBlockEntity holderBlockEntity){
+            if (holderBlockEntity.isEmpty()) {
+                addItem(pLevel, pPos, pPlayer, holderBlockEntity, pPlayer.getItemInHand(pHand));
+            }else{
+                removeItem(pLevel,pPlayer,holderBlockEntity);
+            }
+        }
         
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
     }
@@ -80,4 +90,20 @@ public class HolderBlock extends BaseEntityBlock {
        
         return createTickerHelper(pBlockEntityType, ModBlockEntity.HOLDER_BLOCK_ENTITY.get(), (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1,pPos,pState1));
     }
+    
+    public static void addItem(Level pLevel, BlockPos pPos, Player pPlayer, HolderBlockEntity pBlockEntity, ItemStack itemStack){
+        if (!pLevel.isClientSide) {
+            pBlockEntity.setItem(INPUTSLOT, itemStack.split(1));
+        }
+    }
+    
+    public static void removeItem(Level pLevel,Player pPlayer, HolderBlockEntity pBlockEntity){
+        if (!pLevel.isClientSide) {
+            ItemStack itemStack = pBlockEntity.removeItem(INPUTSLOT, 1);
+            if (pPlayer.getInventory().add(itemStack)){
+                pPlayer.drop(itemStack, false);
+            }
+        }
+    }
+    
 }

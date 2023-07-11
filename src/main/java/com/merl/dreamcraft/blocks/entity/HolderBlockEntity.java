@@ -2,8 +2,10 @@ package com.merl.dreamcraft.blocks.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -13,15 +15,13 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class HolderBlockEntity extends BlockEntity {
+public class HolderBlockEntity extends BlockEntity implements Container {
     private final ItemStackHandler itemStackHandler = new ItemStackHandler(1){
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
         }
     };
-    
-    public boolean isEmpty = true;
     
     private static final int INPUTSLOT = 0;
     
@@ -67,17 +67,7 @@ public class HolderBlockEntity extends BlockEntity {
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
     
-    public void placeItem(ItemStack itemStack){
-        this.itemStackHandler.setStackInSlot(INPUTSLOT, itemStack);
-    }
     
-    public void RemoveItem(ItemStack itemStack){
-        this.itemStackHandler.extractItem(INPUTSLOT, 1, false);
-    }
-    
-    public boolean isEmpty(ItemStack itemStack){
-       return this.itemStackHandler.getStackInSlot(INPUTSLOT).isEmpty();
-    }
     
     @Override
     public void onLoad() {
@@ -108,5 +98,44 @@ public class HolderBlockEntity extends BlockEntity {
         System.out.println(itemStackHandler.getStackInSlot(INPUTSLOT));
     }
     
- 
+    
+    @Override
+    public int getContainerSize() {
+        return 64;
+    }
+    
+    @Override
+    public boolean isEmpty() {
+        return this.itemStackHandler.getStackInSlot(INPUTSLOT).isEmpty();
+    }
+    
+    @Override
+    public ItemStack getItem(int pSlot) {
+        return this.itemStackHandler.getStackInSlot(INPUTSLOT);
+    }
+    
+    @Override
+    public ItemStack removeItem(int pSlot, int pAmount) {
+        return this.itemStackHandler.extractItem(INPUTSLOT, 1, false);
+    }
+    
+    @Override
+    public ItemStack removeItemNoUpdate(int pSlot) {
+        return null;
+    }
+    
+    @Override
+    public void setItem(int pSlot, ItemStack itemStack) {
+        this.itemStackHandler.setStackInSlot(INPUTSLOT, itemStack);
+    }
+    
+    @Override
+    public boolean stillValid(Player pPlayer) {
+        return false;
+    }
+    
+    @Override
+    public void clearContent() {
+    
+    }
 }
