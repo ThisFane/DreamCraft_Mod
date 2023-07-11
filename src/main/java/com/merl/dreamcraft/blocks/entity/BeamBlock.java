@@ -9,6 +9,7 @@ public class BeamBlock extends Block implements BeaconBeamBlock {
         super(pProperties);
     }
 
+    
     @Override
     public DyeColor getColor() {
         return null;

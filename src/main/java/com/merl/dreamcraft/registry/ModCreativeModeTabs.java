@@ -18,14 +18,12 @@ public class ModCreativeModeTabs {
                 entries.accept(ModItems.DREAMSTONE.get());
                 entries.accept(ModItems.LIVING_INGOT.get());
                 entries.accept(ModItems.DREAMSAND.get());
-                entries.accept(ModItems.ANGER.get());
-                entries.accept(ModItems.SADNESS.get());
-                entries.accept(ModItems.FEAR.get());
-                entries.accept(ModItems.DISGUST.get());
-                entries.accept(ModItems.HAPPINESS.get());
-                entries.accept(ModItems.SURPRISE.get());
+                entries.accept(ModItems.EARTH_ESSENCE.get());
+                entries.accept(ModItems.WATER_ESSENCE.get());
+                entries.accept(ModItems.FIRE_ESSENCE.get());
+                entries.accept(ModItems.WIND_ESSENCE.get());
+                entries.accept(ModItems.VOID_ESSENCE.get());
                 entries.accept(ModItems.LIFE_ESSENCE.get());
-                entries.accept(ModItems.AIR_ESSENCE.get());
                 entries.accept(ModItems.SUN.get());
                 entries.accept(ModItems.MOON.get());
                 entries.accept(ModItems.AMETHYST_SCRAPS.get());
@@ -59,7 +57,11 @@ public class ModCreativeModeTabs {
                 entries.accept(ModBlocks.DRYING_TABLE.get());
                 entries.accept(ModBlocks.STONE_SEPARATOR.get());
                 entries.accept(ModBlocks.HOLDER.get());
+                entries.accept(ModBlocks.ALUCINOR_SAPLING.get());
                 entries.accept(ModBlocks.ALUCINOR_LEAVES.get());
+                entries.accept(ModBlocks.ALUCINOR_LOG.get());
+                entries.accept(ModBlocks.ALUCINOR_STRIPPED_LOG.get());
+                entries.accept(ModBlocks.ALUCINOR_PLANKS.get());
 
     }).build());
 

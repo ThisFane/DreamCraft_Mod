@@ -17,7 +17,14 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-    simpleItem(ModItems.AMETHYST_RUNE);
+        simpleItem(ModItems.AMETHYST_RUNE);
+
+        simpleItem(ModItems.EARTH_ESSENCE);
+        simpleItem(ModItems.WATER_ESSENCE);
+        simpleItem(ModItems.FIRE_ESSENCE);
+        simpleItem(ModItems.WIND_ESSENCE);
+        simpleItem(ModItems.VOID_ESSENCE);
+        simpleItem(ModItems.LIFE_ESSENCE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item){

@@ -25,6 +25,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.DREAM_SAND_BLOCK.get());
 
 
+        this.dropSelf(ModBlocks.ALUCINOR_STRIPPED_LOG.get());
+        this.dropSelf(ModBlocks.ALUCINOR_LOG.get());
+        this.dropSelf(ModBlocks.ALUCINOR_SAPLING.get());
+        this.dropSelf(ModBlocks.ALUCINOR_PLANKS.get());
+
+
+
 
 
         this.add(ModBlocks.ALUCINOR_LEAVES.get(), block -> createLeavesDrops(ModBlocks.ALUCINOR_LEAVES.get(), ModBlocks.DREAMING_FLOWER.get(), 50F));

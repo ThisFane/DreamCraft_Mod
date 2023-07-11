@@ -1,5 +1,9 @@
-// 1.20.1	2023-07-10T18:56:34.6004864	Loot Tables
+// 1.20.1	2023-07-10T22:32:12.3448216	Loot Tables
 e5cd6f37699e576cb0fad192355c5bf8a0fbe9bb data/dreamcraft/loot_tables/blocks/alucinor_leaves.json
+39434eaa3044163abd0c8ef4588a2175ea6a0a44 data/dreamcraft/loot_tables/blocks/alucinor_log.json
+9af8a04e144c29df10982929aea9469b8f01aba2 data/dreamcraft/loot_tables/blocks/alucinor_planks.json
+a5521bc6a3ca1b7f7ee0899e12867083bfe24b4e data/dreamcraft/loot_tables/blocks/alucinor_sapling.json
+7eae9447c111d4c83752461e48dc4a0bee6de0f9 data/dreamcraft/loot_tables/blocks/alucinor_stripped_log.json
 566fb7bdbdaf91ccc53bab80b3be36934c4b9fe3 data/dreamcraft/loot_tables/blocks/cortex_block.json
 870d1c9fc8f2ce59288c7538bc3d499a615bece9 data/dreamcraft/loot_tables/blocks/cortex_brick.json
 a7a27859e126d7315b91f7057f587fb659683ef7 data/dreamcraft/loot_tables/blocks/dreamcatcher.json

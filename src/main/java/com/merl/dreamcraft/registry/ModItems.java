@@ -18,14 +18,12 @@ public class ModItems {
 
 
     //Emotions form sand
-    public static RegistryObject<Item> ANGER = ITEMS.register("anger", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
-    public static RegistryObject<Item> SADNESS = ITEMS.register("sadness", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
-    public static RegistryObject<Item> FEAR = ITEMS.register("fear", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
-    public static RegistryObject<Item> DISGUST = ITEMS.register("disgust", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
-    public static RegistryObject<Item> HAPPINESS = ITEMS.register("happiness", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
-    public static RegistryObject<Item> SURPRISE = ITEMS.register("surprise", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> EARTH_ESSENCE = ITEMS.register("earth_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> WATER_ESSENCE = ITEMS.register("water_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> FIRE_ESSENCE = ITEMS.register("fire_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> WIND_ESSENCE = ITEMS.register("wind_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
+    public static RegistryObject<Item> VOID_ESSENCE = ITEMS.register("void_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
     public static RegistryObject<Item> LIFE_ESSENCE = ITEMS.register("life_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
-    public static RegistryObject<Item> AIR_ESSENCE = ITEMS.register("air_essence", () -> new DreamsandItem(new Item.Properties().rarity(Rarity.COMMON)));
 
 
 

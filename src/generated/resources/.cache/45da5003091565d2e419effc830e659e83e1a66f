@@ -1,2 +1,8 @@
-// 1.20.1	2023-07-10T18:56:34.6004864	Item Models: dreamcraft
+// 1.20.1	2023-07-11T02:05:12.9382837	Item Models: dreamcraft
 cc75f69afcd5584208a0b2a7d8d5e1015fcf8c02 assets/dreamcraft/models/item/amethyst_rune.json
+c1a0ef82beaa4a089bdef95b05dfc59943cc0bdb assets/dreamcraft/models/item/earth_essence.json
+7a728d88b47f58d79f0b22dfded167d9e3f2c52f assets/dreamcraft/models/item/fire_essence.json
+704f990cd84119cc7757b1ef99ddb596ec62ea91 assets/dreamcraft/models/item/life_essence.json
+cef3150ec9e09ab5a929a2509aef4988cfbdece1 assets/dreamcraft/models/item/void_essence.json
+916d3f43a0f949337f1d372b8e7fb26f45f0d6e5 assets/dreamcraft/models/item/water_essence.json
+00451e9f3e4e967b55b9738a6349246398874e4f assets/dreamcraft/models/item/wind_essence.json
