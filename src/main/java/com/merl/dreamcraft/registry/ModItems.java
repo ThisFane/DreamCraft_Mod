@@ -49,6 +49,8 @@ public class ModItems {
     //Tools
     public static RegistryObject<Item> SWORD_OF_RAGE = ITEMS.register("sword_of_rage", () -> new SwordOfRageItem(Tiers.DIAMOND, 10, 5f, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> WIND_WAND = ITEMS.register("wind_wand", () -> new WindWandItem(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1).durability(WindWandItem.Durability())));
+    public static final RegistryObject<Item> WATER_WAND = ITEMS.register("water_wand", () -> new WaterWandItem(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1).durability(WindWandItem.Durability())));
+    
     public static final RegistryObject<Item> SUN_STAFF = ITEMS.register("sun_staff", () -> new SunWandItem(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1).durability(WindWandItem.Durability())));
     public static RegistryObject<Item> DREAM_PICK = ITEMS.register("dream_pick", () -> new DreamPickAxeItem(Tiers.DIAMOND, 1, 2.8f, new Item.Properties().stacksTo(1)));
     public static RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword", () -> new SwordItem(Tiers.DIAMOND, 8, 2.8f, new Item.Properties().stacksTo(1)));

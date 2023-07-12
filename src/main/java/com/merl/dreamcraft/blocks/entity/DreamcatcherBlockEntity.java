@@ -1,8 +1,8 @@
 package com.merl.dreamcraft.blocks.entity;
 
 
+import com.merl.dreamcraft.registry.ModBlockEntity;
 import com.merl.dreamcraft.registry.ModItems;
-import com.merl.dreamcraft.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.BlockTags;
@@ -15,7 +15,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +26,7 @@ public class DreamcatcherBlockEntity extends BlockEntity {
     private static List<UUID> entityMemory = new ArrayList<java.util.UUID>();
 
     public DreamcatcherBlockEntity(BlockPos blockPos, BlockState blockState) {
-        super(ModBlockEntities.DREAMCADREAMCATCHER_BLOCK_ENTITY.get(), blockPos, blockState);
+        super(ModBlockEntity.DREAMCADREAMCATCHER_BLOCK_ENTITY.get(), blockPos, blockState);
     }
 
     public static void tick(Level level, BlockPos blockPos, BlockState blockState, DreamcatcherBlockEntity entity) {

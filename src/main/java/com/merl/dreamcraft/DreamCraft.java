@@ -1,9 +1,8 @@
 package com.merl.dreamcraft;
 
-import com.merl.dreamcraft.blocks.entity.ModBlockEntity;
+import com.merl.dreamcraft.registry.ModBlockEntity;
 import com.merl.dreamcraft.effect.ModEffects;
 import com.merl.dreamcraft.items.DreamPickAxeItem;
-import com.merl.dreamcraft.registry.ModBlockEntities;
 import com.merl.dreamcraft.registry.ModBlocks;
 import com.merl.dreamcraft.registry.ModCreativeModeTabs;
 import com.merl.dreamcraft.registry.ModItems;
@@ -41,7 +40,6 @@ public class DreamCraft
         ModBlocks.register(modEventBus);
         ModEffects.register(modEventBus);
         ModCreativeModeTabs.C_MOD_TABS.register(modEventBus);
-        ModBlockEntities.register(modEventBus);
         ModBlockEntity.register(modEventBus);
 
         // Register the commonSetup method for modloading
@@ -75,8 +73,7 @@ public class DreamCraft
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
     }

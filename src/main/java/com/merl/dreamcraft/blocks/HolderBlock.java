@@ -1,8 +1,10 @@
 package com.merl.dreamcraft.blocks;
 
 import com.merl.dreamcraft.blocks.entity.HolderBlockEntity;
-import com.merl.dreamcraft.blocks.entity.ModBlockEntity;
+import com.merl.dreamcraft.registry.ModBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -92,18 +94,19 @@ public class HolderBlock extends BaseEntityBlock {
     }
     
     public static void addItem(Level pLevel, BlockPos pPos, Player pPlayer, HolderBlockEntity pBlockEntity, ItemStack itemStack){
-        if (!pLevel.isClientSide) {
             pBlockEntity.setItem(INPUTSLOT, itemStack.split(1));
-        }
     }
     
     public static void removeItem(Level pLevel,Player pPlayer, HolderBlockEntity pBlockEntity){
-        if (!pLevel.isClientSide) {
             ItemStack itemStack = pBlockEntity.removeItem(INPUTSLOT, 1);
             if (pPlayer.getInventory().add(itemStack)){
                 pPlayer.drop(itemStack, false);
-            }
         }
     }
     
+    @Override
+    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        
+        super.tick(pState, pLevel, pPos, pRandom);
+    }
 }

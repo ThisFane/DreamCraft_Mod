@@ -2,7 +2,7 @@ package com.merl.dreamcraft.blocks;
 
 
 import com.merl.dreamcraft.blocks.entity.DreamcatcherBlockEntity;
-import com.merl.dreamcraft.registry.ModBlockEntities;
+import com.merl.dreamcraft.registry.ModBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
@@ -45,7 +45,7 @@ public class DreamcatcherBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return createTickerHelper(type, ModBlockEntities.DREAMCADREAMCATCHER_BLOCK_ENTITY.get(), DreamcatcherBlockEntity::tick);
+        return createTickerHelper(type, ModBlockEntity.DREAMCADREAMCATCHER_BLOCK_ENTITY.get(), DreamcatcherBlockEntity::tick);
     }
 
 

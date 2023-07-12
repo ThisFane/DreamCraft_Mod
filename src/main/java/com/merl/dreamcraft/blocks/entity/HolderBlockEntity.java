@@ -1,5 +1,6 @@
 package com.merl.dreamcraft.blocks.entity;
 
+import com.merl.dreamcraft.registry.ModBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.Container;
@@ -20,6 +21,9 @@ public class HolderBlockEntity extends BlockEntity implements Container {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+            if (!level.isClientSide()){
+                level.sendBlockUpdated(getBlockPos(),getBlockState(),getBlockState(),3);
+            }
         }
     };
     
@@ -58,6 +62,10 @@ public class HolderBlockEntity extends BlockEntity implements Container {
         };
     }
     
+    public ItemStack getRenderStack(){
+        return itemStackHandler.getStackInSlot(INPUTSLOT);
+    }
+    
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemStackHandler.getSlots());
         for (int i = 0; i < itemStackHandler.getSlots(); i++) {
@@ -94,8 +102,7 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     }
     
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
-        
-        System.out.println(itemStackHandler.getStackInSlot(INPUTSLOT));
+    
     }
     
     
@@ -106,17 +113,17 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     
     @Override
     public boolean isEmpty() {
-        return this.itemStackHandler.getStackInSlot(INPUTSLOT).isEmpty();
+        return itemStackHandler.getStackInSlot(INPUTSLOT).isEmpty();
     }
     
     @Override
     public ItemStack getItem(int pSlot) {
-        return this.itemStackHandler.getStackInSlot(INPUTSLOT);
+        return itemStackHandler.getStackInSlot(INPUTSLOT);
     }
     
     @Override
     public ItemStack removeItem(int pSlot, int pAmount) {
-        return this.itemStackHandler.extractItem(INPUTSLOT, 1, false);
+        return itemStackHandler.extractItem(INPUTSLOT, 1, false);
     }
     
     @Override

@@ -42,6 +42,7 @@ public class ModCreativeModeTabs {
                 entries.accept(ModItems.DREAM_PICK.get());
                 entries.accept(ModItems.SUN_STAFF.get());
                 entries.accept(ModItems.WIND_WAND.get());
+                entries.accept(ModItems.WATER_WAND.get());
                 entries.accept(ModItems.SWORD_OF_RAGE.get());
                 entries.accept(ModItems.AMETHYST_SWORD.get());
                 entries.accept(ModItems.ANTITRADERWAND.get());
