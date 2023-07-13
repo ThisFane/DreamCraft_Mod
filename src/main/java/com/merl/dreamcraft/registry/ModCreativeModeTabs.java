@@ -24,8 +24,6 @@ public class ModCreativeModeTabs {
                 entries.accept(ModItems.WIND_ESSENCE.get());
                 entries.accept(ModItems.VOID_ESSENCE.get());
                 entries.accept(ModItems.LIFE_ESSENCE.get());
-                entries.accept(ModItems.SUN.get());
-                entries.accept(ModItems.MOON.get());
                 entries.accept(ModItems.AMETHYST_SCRAPS.get());
 
 
@@ -51,6 +49,9 @@ public class ModCreativeModeTabs {
                 entries.accept(ModItems.DRIED_SOY_BEANS.get());
                 entries.accept(ModBlocks.DREAMING_FLOWER.get());
 
+
+                entries.accept(ModBlocks.SUN_BLOCK.get());
+                entries.accept(ModBlocks.MOON_BLOCK.get());
                 entries.accept(ModBlocks.DREAM_SAND_BLOCK.get());
                 entries.accept(ModBlocks.CORTEX_BLOCK.get());
                 entries.accept(ModBlocks.CORTEX_BRICK.get());

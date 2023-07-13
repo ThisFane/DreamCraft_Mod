@@ -1,7 +1,6 @@
 package com.merl.dreamcraft.items;
 
 
-import com.merl.dreamcraft.entity.SunProjectile;
 import com.merl.dreamcraft.registry.ModItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -13,10 +12,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class SunItem extends Item {
+
     public SunItem(Item.Properties pProperties) {
         super(pProperties);
     }
-
+ /*
 
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
@@ -31,4 +31,6 @@ public class SunItem extends Item {
 
         return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
     }
+
+     */
 }

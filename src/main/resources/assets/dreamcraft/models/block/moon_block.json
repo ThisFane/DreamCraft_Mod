@@ -1,0 +1,33 @@
+{
+  "credit": "Made with Blockbench",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "dreamcraft:item/moon",
+    "particle": "dreamcraft:item/moon"
+  },
+  "elements": [
+    {
+      "from": [4, 4, 4],
+      "to": [12, 12, 12],
+      "faces": {
+        "north": {"uv": [4, 4, 12, 12], "texture": "#0"},
+        "east": {"uv": [4, 4, 12, 12], "texture": "#0"},
+        "south": {"uv": [4, 4, 12, 12], "texture": "#0"},
+        "west": {"uv": [4, 4, 12, 12], "texture": "#0"},
+        "up": {"uv": [4, 4, 12, 12], "texture": "#0"},
+        "down": {"uv": [4, 4, 12, 12], "texture": "#0"}
+      }
+    }
+  ],	"display": {
+    "ground": {
+      "translation": [0, 1.75, 0],
+      "scale": [0.62, 0.62, 0.62]
+    },
+    "gui": {
+      "rotation": [20, 45, 0]
+    },
+    "head": {
+      "translation": [0, 10.25, 0]
+    }
+  }
+}
