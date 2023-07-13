@@ -29,6 +29,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.ALUCINOR_LOG.get());
         this.dropSelf(ModBlocks.ALUCINOR_SAPLING.get());
         this.dropSelf(ModBlocks.ALUCINOR_PLANKS.get());
+        this.dropSelf(ModBlocks.SUN_BLOCK.get());
+        this.dropSelf(ModBlocks.MOON_BLOCK.get());
 
 
 

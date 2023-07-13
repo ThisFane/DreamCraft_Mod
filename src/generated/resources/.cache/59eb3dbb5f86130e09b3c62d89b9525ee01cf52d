@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-10T22:32:12.3448216	Loot Tables
+// 1.20.1	2023-07-13T13:18:26.050919	Loot Tables
 e5cd6f37699e576cb0fad192355c5bf8a0fbe9bb data/dreamcraft/loot_tables/blocks/alucinor_leaves.json
 39434eaa3044163abd0c8ef4588a2175ea6a0a44 data/dreamcraft/loot_tables/blocks/alucinor_log.json
 9af8a04e144c29df10982929aea9469b8f01aba2 data/dreamcraft/loot_tables/blocks/alucinor_planks.json
@@ -11,4 +11,6 @@ e120ade4146b809901d12ba8fa4856ae4466922c data/dreamcraft/loot_tables/blocks/drea
 9a73972847d71ea7b2091ee06db522193f1223f4 data/dreamcraft/loot_tables/blocks/dream_sand_block.json
 106de29117b249952d8df56dcadf75542c8bd1d7 data/dreamcraft/loot_tables/blocks/drying_tables.json
 ef8bdda862db58fcefd69b3b05e3c82e7ce3571b data/dreamcraft/loot_tables/blocks/holder.json
+f33d7dea7ab873e6381d01708ca8bcad8d57e57b data/dreamcraft/loot_tables/blocks/moon_block.json
 254369ed2ac51e4e7fda9d7c317e6e26ff40129f data/dreamcraft/loot_tables/blocks/stone_separator.json
+c5d281c0fdc9625805ae559dbbcf36f5953fe39d data/dreamcraft/loot_tables/blocks/sun_block.json

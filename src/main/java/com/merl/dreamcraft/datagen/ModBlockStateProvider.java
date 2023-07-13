@@ -32,6 +32,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.ALUCINOR_STRIPPED_LOG);
         blockItem(ModBlocks.ALUCINOR_LOG);
         blockItem(ModBlocks.ALUCINOR_SAPLING);
+        blockItem(ModBlocks.SUN_BLOCK);
+        blockItem(ModBlocks.MOON_BLOCK);
 
 
     }

@@ -21,7 +21,7 @@ public class ModBlocks {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, DreamCraft.MODID);
 
     public static final RegistryObject<Block> DREAMCATCHER = registerBlock("dreamcatcher", () -> new DreamcatcherBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON)));
-    public static final RegistryObject<Block> HOLDER = registerBlock("holder", () -> new HolderBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noCollission().requiresCorrectToolForDrops().strength(5F)));
+    public static final RegistryObject<Block> HOLDER = registerBlock("holder", () -> new HolderBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().requiresCorrectToolForDrops().strength(5F)));
 
 
     public static final RegistryObject<Block> STONE_SEPARATOR = registerBlock("stone_separator", () -> new StoneSeparatorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
@@ -44,6 +44,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> ALUCINOR_STRIPPED_LOG = registerBlock("alucinor_stripped_log", () -> new LogBlock(BlockBehaviour.Properties.copy((Blocks.OAK_LOG))));
     public static final RegistryObject<Block> ALUCINOR_SAPLING = registerBlock("alucinor_sapling", () -> new SaplingBlock(new OakTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> ALUCINOR_PLANKS = registerBlock("alucinor_planks", () -> new Block(BlockBehaviour.Properties.copy((Blocks.OAK_PLANKS))));
+
+
+    public static final RegistryObject<Block> SUN_BLOCK = registerBlock("sun_block", () -> new StellarBlock(BlockBehaviour.Properties.copy((Blocks.OAK_PLANKS)).noOcclusion()));
+    public static final RegistryObject<Block> MOON_BLOCK = registerBlock("moon_block", () -> new StellarBlock(BlockBehaviour.Properties.copy((Blocks.OAK_PLANKS)).noOcclusion()));
+
+
+
 
 
 

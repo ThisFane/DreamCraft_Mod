@@ -42,10 +42,6 @@ public class ModItems {
 
 
 
-    public static RegistryObject<Item> SUN = ITEMS.register("sun", () -> new SunItem(new Item.Properties().rarity(Rarity.EPIC)));
-    public static RegistryObject<Item> MOON = ITEMS.register("moon", () -> new MoonItem(new Item.Properties().rarity(Rarity.EPIC)));
-
-
     //Tools
     public static RegistryObject<Item> SWORD_OF_RAGE = ITEMS.register("sword_of_rage", () -> new SwordOfRageItem(Tiers.DIAMOND, 10, 5f, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> WIND_WAND = ITEMS.register("wind_wand", () -> new WindWandItem(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1).durability(WindWandItem.Durability())));
