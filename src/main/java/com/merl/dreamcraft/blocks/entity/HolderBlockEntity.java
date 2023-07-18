@@ -1,20 +1,26 @@
 package com.merl.dreamcraft.blocks.entity;
 
 import com.merl.dreamcraft.registry.ModBlockEntity;
+import com.merl.dreamcraft.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+
+import java.util.List;
 
 public class HolderBlockEntity extends BlockEntity implements Container {
     private final ItemStackHandler itemStackHandler = new ItemStackHandler(1){
@@ -103,6 +109,10 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
     
+        if (itemStackHandler.getStackInSlot(INPUTSLOT).is(ModBlocks.SUN_BLOCK.get().asItem())) {
+            pullEntities(pLevel, pPos);
+        }
+        
     }
     
     
@@ -145,4 +155,17 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     public void clearContent() {
     
     }
+    
+    public void pullEntities(Level pLevel,BlockPos pPos){
+        AABB areaOfEffect = AABB.ofSize(pPos.getCenter(), 15, 0, 15 );
+        List<LivingEntity> nearByEntities = pLevel.getEntitiesOfClass(LivingEntity.class, areaOfEffect);
+    
+        for (LivingEntity nearByEntity : nearByEntities) {
+            Vec3 pullLocation = nearByEntity.getPosition(2).lerp(pPos.getCenter(),0.15);
+         
+            nearByEntity.setPos(pullLocation);
+        }
+    
+    }
+    
 }

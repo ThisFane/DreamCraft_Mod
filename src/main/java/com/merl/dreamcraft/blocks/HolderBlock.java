@@ -2,6 +2,7 @@ package com.merl.dreamcraft.blocks;
 
 import com.merl.dreamcraft.blocks.entity.HolderBlockEntity;
 import com.merl.dreamcraft.registry.ModBlockEntity;
+import com.merl.dreamcraft.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -60,11 +61,13 @@ public class HolderBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         BlockEntity holder = pLevel.getBlockEntity(pPos);
         
-        if (holder instanceof HolderBlockEntity holderBlockEntity){
-            if (holderBlockEntity.isEmpty()) {
-                addItem(pLevel, pPos, pPlayer, holderBlockEntity, pPlayer.getItemInHand(pHand));
-            }else{
-                removeItem(pLevel,pPlayer,holderBlockEntity);
+        if(!pPlayer.isHolding(ModBlocks.HOLDER.get().asItem())){
+            if (holder instanceof HolderBlockEntity holderBlockEntity){
+                if (holderBlockEntity.isEmpty()) {
+                    addItem(pLevel, pPos, pPlayer, holderBlockEntity, pPlayer.getItemInHand(pHand));
+                }else{
+                    removeItem(pLevel,pPlayer,holderBlockEntity);
+                }
             }
         }
         
