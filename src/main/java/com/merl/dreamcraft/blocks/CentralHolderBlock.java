@@ -1,6 +1,6 @@
 package com.merl.dreamcraft.blocks;
 
-import com.merl.dreamcraft.blocks.entity.HolderBlockEntity;
+import com.merl.dreamcraft.blocks.entity.CentralHolderBlockEntity;
 import com.merl.dreamcraft.registry.ModBlockEntity;
 import com.merl.dreamcraft.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
@@ -25,8 +25,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class HolderBlock extends BaseEntityBlock {
-    public HolderBlock(Properties pProperties) {
+public class CentralHolderBlock extends BaseEntityBlock {
+    public CentralHolderBlock(Properties pProperties) {
         super(pProperties);
         
     }
@@ -50,8 +50,8 @@ public class HolderBlock extends BaseEntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof HolderBlockEntity) {
-                ((HolderBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof CentralHolderBlockEntity) {
+                ((CentralHolderBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
@@ -62,11 +62,11 @@ public class HolderBlock extends BaseEntityBlock {
         BlockEntity holder = pLevel.getBlockEntity(pPos);
         
         if(!pPlayer.isHolding(ModBlocks.HOLDER.get().asItem()) && !pPlayer.isHolding(ModBlocks.CENTRAL_HOLDER.get().asItem())){
-            if (holder instanceof HolderBlockEntity holderBlockEntity){
-                if (holderBlockEntity.isEmpty()) {
-                    addItem(pLevel, pPos, pPlayer, holderBlockEntity, pPlayer.getItemInHand(pHand));
+            if (holder instanceof CentralHolderBlockEntity centralHolderBlockEntity){
+                if (centralHolderBlockEntity.isEmpty()) {
+                    addItem(pLevel, pPos, pPlayer, centralHolderBlockEntity, pPlayer.getItemInHand(pHand));
                 }else{
-                    removeItem(pLevel,pPlayer,holderBlockEntity);
+                    removeItem(pLevel,pPlayer,centralHolderBlockEntity);
                 }
             }
         }
@@ -77,7 +77,7 @@ public class HolderBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new HolderBlockEntity(pPos, pState);
+        return new CentralHolderBlockEntity(pPos, pState);
     }
 
 
@@ -93,14 +93,14 @@ public class HolderBlock extends BaseEntityBlock {
            return null;
        }
        
-        return createTickerHelper(pBlockEntityType, ModBlockEntity.HOLDER_BLOCK_ENTITY.get(), (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1,pPos,pState1));
+        return createTickerHelper(pBlockEntityType, ModBlockEntity.CENTRAL_HOLDER_BLOCK_ENTITY.get(), (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1,pPos,pState1));
     }
     
-    public static void addItem(Level pLevel, BlockPos pPos, Player pPlayer, HolderBlockEntity pBlockEntity, ItemStack itemStack){
+    public static void addItem(Level pLevel, BlockPos pPos, Player pPlayer,CentralHolderBlockEntity pBlockEntity, ItemStack itemStack){
             pBlockEntity.setItem(INPUTSLOT, itemStack.split(1));
     }
     
-    public static void removeItem(Level pLevel,Player pPlayer, HolderBlockEntity pBlockEntity){
+    public static void removeItem(Level pLevel,Player pPlayer, CentralHolderBlockEntity pBlockEntity){
             ItemStack itemStack = pBlockEntity.removeItem(INPUTSLOT, 1);
             if (pPlayer.getInventory().add(itemStack)){
                 pPlayer.drop(itemStack, false);

@@ -34,7 +34,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         //Shapeless Recipe
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.ALUCINOR_PLANKS.get(), 4).requires(ModBlocks.ALUCINOR_LOG.get()).unlockedBy("has log", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.ALUCINOR_LOG.get()).build())).save(pWriter);
-
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModBlocks.CENTRAL_HOLDER.get(), 1).requires(ModBlocks.HOLDER.get()).unlockedBy("has holder", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.HOLDER.get()).build())).save(pWriter);
+        
         //Smelting
         oreSmelting(pWriter, SOY_SMELTING, RecipeCategory.MISC, ModItems.FRESH_SOY_BEANS.get(), 1, 100, "soy");
 

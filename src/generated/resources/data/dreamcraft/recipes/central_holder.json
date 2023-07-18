@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dreamcraft:holder"
+    }
+  ],
+  "result": {
+    "item": "dreamcraft:central_holder"
+  }
+}

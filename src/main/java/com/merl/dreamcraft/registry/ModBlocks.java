@@ -22,8 +22,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DREAMCATCHER = registerBlock("dreamcatcher", () -> new DreamcatcherBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON)));
     public static final RegistryObject<Block> HOLDER = registerBlock("holder", () -> new HolderBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().requiresCorrectToolForDrops().strength(5F)));
-
-
+    public static final RegistryObject<Block> CENTRAL_HOLDER = registerBlock("central_holder", () -> new CentralHolderBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().requiresCorrectToolForDrops().strength(5F)));
+    
+    
+    
     public static final RegistryObject<Block> STONE_SEPARATOR = registerBlock("stone_separator", () -> new StoneSeparatorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> DRYING_TABLE = registerBlock("drying_tables", () -> new DryingTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().requiresCorrectToolForDrops()));
 

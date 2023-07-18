@@ -22,7 +22,7 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import java.util.List;
 
-public class HolderBlockEntity extends BlockEntity implements Container {
+public class CentralHolderBlockEntity extends BlockEntity implements Container {
     private final ItemStackHandler itemStackHandler = new ItemStackHandler(1){
         @Override
         protected void onContentsChanged(int slot) {
@@ -41,14 +41,14 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     private int craftingProgress = 0;
     private int maxCraftingProgress = 100;
     
-    public HolderBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntity.HOLDER_BLOCK_ENTITY.get(), pPos, pBlockState);
+    public CentralHolderBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(ModBlockEntity.CENTRAL_HOLDER_BLOCK_ENTITY.get(), pPos, pBlockState);
         this.containerData = new ContainerData() {
             @Override
             public int get(int pIndex) {
                 return switch (pIndex){
-                    case 0 -> HolderBlockEntity.this.craftingProgress;
-                    case 1 -> HolderBlockEntity.this.maxCraftingProgress;
+                    case 0 -> CentralHolderBlockEntity.this.craftingProgress;
+                    case 1 -> CentralHolderBlockEntity.this.maxCraftingProgress;
                     default -> 0;
                 };
             }
@@ -56,8 +56,8 @@ public class HolderBlockEntity extends BlockEntity implements Container {
             @Override
             public void set(int pIndex, int pValue) {
                 switch (pIndex){
-                    case 0 -> HolderBlockEntity.this.craftingProgress = pValue;
-                    case 1 -> HolderBlockEntity.this.maxCraftingProgress = pValue;
+                    case 0 -> CentralHolderBlockEntity.this.craftingProgress = pValue;
+                    case 1 -> CentralHolderBlockEntity.this.maxCraftingProgress = pValue;
                 };
             }
     
