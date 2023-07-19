@@ -1,9 +1,11 @@
 package com.merl.dreamcraft.blocks.entity;
 
+import com.merl.dreamcraft.particle.ModParticles;
 import com.merl.dreamcraft.registry.ModBlockEntity;
 import com.merl.dreamcraft.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
@@ -111,6 +113,9 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     
         if (itemStackHandler.getStackInSlot(INPUTSLOT).is(ModBlocks.SUN_BLOCK.get().asItem())) {
             pullEntities(pLevel, pPos);
+            if (!level.isClientSide()){
+                spawnFoundParticles((ServerLevel) level, pPos, pState);
+            }
         }
         
     }
@@ -168,6 +173,14 @@ public class HolderBlockEntity extends BlockEntity implements Container {
             nearByEntity.addDeltaMovement(pullLocation.scale(0.5));
         }
     
+    }
+    
+    
+    private void spawnFoundParticles(ServerLevel level, BlockPos blockPos, BlockState blockState) {
+            level.sendParticles(ModParticles.TEST_PARTICLES.get(),
+                    blockPos.getX() + 0.5d, blockPos.getY() + 1, blockPos.getZ() + 0.5d, 20,
+                    Math.cos(18) * 0.15d, 0.15d, Math.sin(18) * 0.15d, 0.1);
+        
     }
     
 }

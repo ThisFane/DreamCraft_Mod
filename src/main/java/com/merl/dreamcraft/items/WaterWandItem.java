@@ -11,7 +11,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
-import java.sql.Time;
 import java.util.List;
 
 
@@ -59,8 +58,8 @@ public class WaterWandItem extends Item {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
         pPlayer.getCooldowns().addCooldown(this,5);
         
-        pLevel.removeBlock(pPlayer.blockPosition().below(1),true);
-    
+        
+     
     
         if(Durability() - itemstack.getDamageValue() >= 2) {
             itemstack.hurtAndBreak(1, pPlayer, (playerentity) -> {

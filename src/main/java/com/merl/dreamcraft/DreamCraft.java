@@ -1,12 +1,11 @@
 package com.merl.dreamcraft;
 
-import com.merl.dreamcraft.registry.ModBlockEntity;
+import com.merl.dreamcraft.particle.ModParticles;
+import com.merl.dreamcraft.registry.*;
 import com.merl.dreamcraft.effect.ModEffects;
 import com.merl.dreamcraft.items.DreamPickAxeItem;
-import com.merl.dreamcraft.registry.ModBlocks;
-import com.merl.dreamcraft.registry.ModCreativeModeTabs;
-import com.merl.dreamcraft.registry.ModItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -41,6 +40,7 @@ public class DreamCraft
         ModEffects.register(modEventBus);
         ModCreativeModeTabs.C_MOD_TABS.register(modEventBus);
         ModBlockEntity.register(modEventBus);
+        ModParticles.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -53,8 +53,7 @@ public class DreamCraft
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
-
+    
     }
 
 
@@ -74,7 +73,7 @@ public class DreamCraft
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes.setRenderLayer();
         }
     }
 }

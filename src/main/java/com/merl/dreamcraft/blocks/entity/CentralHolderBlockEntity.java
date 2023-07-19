@@ -112,6 +112,8 @@ public class CentralHolderBlockEntity extends BlockEntity implements Container {
         if (itemStackHandler.getStackInSlot(INPUTSLOT).is(ModBlocks.SUN_BLOCK.get().asItem())) {
             pullEntities(pLevel, pPos);
         }
+    
+        countHolderInArea(pLevel, pPos, pState);
         
     }
     
@@ -170,4 +172,9 @@ public class CentralHolderBlockEntity extends BlockEntity implements Container {
     
     }
     
+    public void countHolderInArea(Level pLevel,BlockPos pPos, BlockState pState){
+        AABB countArea = new AABB(pPos).deflate(16);
+ 
+    
+    }
 }
