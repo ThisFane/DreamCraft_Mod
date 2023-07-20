@@ -1,6 +1,6 @@
 package com.merl.dreamcraft.particle;
 
-import com.merl.dreamcraft.registry.ModRenderTypes;
+import com.merl.dreamcraft.registry.ModParticleRenderTypes;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -38,7 +38,7 @@ public class TestParticles extends TextureSheetParticle {
     
     @Override
     public ParticleRenderType getRenderType() {
-        return ModRenderTypes.VeryLight; //ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+        return ModParticleRenderTypes.VERYLIGHT; //ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
     }
     
     public static class Provider implements ParticleProvider<SimpleParticleType>{

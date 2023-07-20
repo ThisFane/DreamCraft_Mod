@@ -10,10 +10,10 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureManager;
 
-public interface ModRenderTypes extends ParticleRenderType {
+public interface ModParticleRenderTypes extends ParticleRenderType {
     
     
-    ParticleRenderType VeryLight = new ParticleRenderType() {
+    ParticleRenderType VERYLIGHT = new ParticleRenderType() {
         public void begin(BufferBuilder p_107462_, TextureManager p_107463_) {
             RenderSystem.disableBlend();
             RenderSystem.depthMask(false);
@@ -32,7 +32,7 @@ public interface ModRenderTypes extends ParticleRenderType {
     };
     
     
-    ParticleRenderType MyEnd = new ParticleRenderType() {
+    ParticleRenderType MYEND = new ParticleRenderType() {
         public void begin(BufferBuilder p_107462_, TextureManager p_107463_) {
             RenderSystem.disableBlend();
             RenderSystem.depthMask(false);
