@@ -1,7 +1,6 @@
 package com.merl.dreamcraft.blocks;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -24,7 +23,6 @@ public class StellarBlock extends Block {
 
     @Override
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
-        System.out.println(pLevel.getDayTime());
         super.animateTick(pState, pLevel, pPos, pRandom);
     }
 

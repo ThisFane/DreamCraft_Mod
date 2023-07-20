@@ -31,7 +31,7 @@ public class HolderRenderer implements BlockEntityRenderer<HolderBlockEntity> {
     @Override
     public void render(HolderBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-        ItemStack itemStack = pBlockEntity.getRenderStack();
+        ItemStack itemStack = pBlockEntity.getItem(0);
     
        
         if (itemStack.getItem() instanceof BlockItem && !(blockLikeList.contains(itemStack.getItem()))){

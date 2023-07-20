@@ -40,7 +40,7 @@ public class ModBlocks {
 
     //Plants
     public static final RegistryObject<Block> SOY_PLANT = registerBlockItem("soy_plant", () -> new SoyCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noLootTable()));
-    public static final RegistryObject<Block> ALUCINOR_LEAVES = registerBlock("alucinor_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.AZALEA_LEAVES).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ALUCINOR_LEAVES = registerBlock("alucinor_leaves", () -> new AlucinorLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.AZALEA_LEAVES).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> ALUCINOR_LOG = registerBlock("alucinor_log", () -> new LogBlock(BlockBehaviour.Properties.copy((Blocks.OAK_LOG))));
     public static final RegistryObject<Block> ALUCINOR_STRIPPED_LOG = registerBlock("alucinor_stripped_log", () -> new LogBlock(BlockBehaviour.Properties.copy((Blocks.OAK_LOG))));

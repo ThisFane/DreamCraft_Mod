@@ -97,13 +97,13 @@ public class CentralHolderBlockEntity extends BlockEntity implements Container {
     
     @Override
     protected void saveAdditional(CompoundTag pTag) {
-        pTag.put("holder_inventory",itemStackHandler.serializeNBT());
+        pTag.put("c_holder_inventory",itemStackHandler.serializeNBT());
         super.saveAdditional(pTag);
     }
     
     @Override
     public void load(CompoundTag pTag) {
-        itemStackHandler.deserializeNBT(pTag.getCompound("holder_inventory"));
+        itemStackHandler.deserializeNBT(pTag.getCompound("c_holder_inventory"));
         super.load(pTag);
     }
     

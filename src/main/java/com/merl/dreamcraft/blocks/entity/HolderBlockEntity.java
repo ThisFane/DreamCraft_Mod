@@ -21,6 +21,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -87,14 +88,14 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     
     @Override
     public void onLoad() {
-        super.onLoad();
         itemHandlerLazyOptional = LazyOptional.of(() -> itemStackHandler);
+        super.onLoad();
     }
     
     @Override
     public void invalidateCaps() {
-        super.invalidateCaps();
         itemHandlerLazyOptional.invalidate();
+        super.invalidateCaps();
     }
     
     @Override
@@ -105,12 +106,12 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     
     @Override
     public void load(CompoundTag pTag) {
-        itemStackHandler.deserializeNBT(pTag.getCompound("holder_inventory"));
         super.load(pTag);
+        itemStackHandler.deserializeNBT(pTag.getCompound("holder_inventory"));
     }
     
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
-    
+      
         if (itemStackHandler.getStackInSlot(INPUTSLOT).is(ModBlocks.SUN_BLOCK.get().asItem())) {
             pullEntities(pLevel, pPos);
             if (!level.isClientSide()){
@@ -133,35 +134,44 @@ public class HolderBlockEntity extends BlockEntity implements Container {
     
     @Override
     public ItemStack getItem(int pSlot) {
+        setChanged();
         return itemStackHandler.getStackInSlot(INPUTSLOT);
     }
     
     @Override
     public ItemStack removeItem(int pSlot, int pAmount) {
+        setChanged();
         return itemStackHandler.extractItem(INPUTSLOT, 1, false);
     }
     
+    
     @Override
-    public ItemStack removeItemNoUpdate(int pSlot) {
-        return null;
+    public @NotNull ItemStack removeItemNoUpdate(int pSlot) {
+        return this.removeItem(pSlot, 1);
     }
     
     @Override
     public void setItem(int pSlot, ItemStack itemStack) {
         this.itemStackHandler.setStackInSlot(INPUTSLOT, itemStack);
+        setChanged();
     }
     
     @Override
     public boolean stillValid(Player pPlayer) {
-        return false;
+        return Container.stillValidBlockEntity(this, pPlayer);
     }
     
     @Override
     public void clearContent() {
-    
+        this.itemHandlerLazyOptional.invalidate();
     }
     
-    public void pullEntities(Level pLevel,BlockPos pPos){
+    @Override
+    public void setChanged() {
+        super.setChanged();
+    }
+    
+    public void pullEntities(Level pLevel, BlockPos pPos){
         AABB areaOfEffect = AABB.ofSize(pPos.getCenter(), 15, 10, 15 );
         List<LivingEntity> nearByEntities = pLevel.getEntitiesOfClass(LivingEntity.class, areaOfEffect);
     
@@ -182,5 +192,6 @@ public class HolderBlockEntity extends BlockEntity implements Container {
                     Math.cos(18) * 0.15d, 0.15d, Math.sin(18) * 0.15d, 0.1);
         
     }
+    
     
 }

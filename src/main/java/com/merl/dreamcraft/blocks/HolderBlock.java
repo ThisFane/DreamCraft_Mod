@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -65,13 +66,14 @@ public class HolderBlock extends BaseEntityBlock {
             if (holder instanceof HolderBlockEntity holderBlockEntity){
                 if (holderBlockEntity.isEmpty()) {
                     addItem(pLevel, pPos, pPlayer, holderBlockEntity, pPlayer.getItemInHand(pHand));
+                    return InteractionResult.sidedSuccess(pLevel.isClientSide());
                 }else{
-                    removeItem(pLevel,pPlayer,holderBlockEntity);
+                    removeItem(pLevel,pPlayer,holderBlockEntity, pPos);
+                    return InteractionResult.sidedSuccess(pLevel.isClientSide());
                 }
             }
         }
-        
-        return InteractionResult.sidedSuccess(pLevel.isClientSide());
+        return InteractionResult.PASS;
     }
     
     @Nullable
@@ -98,13 +100,15 @@ public class HolderBlock extends BaseEntityBlock {
     
     public static void addItem(Level pLevel, BlockPos pPos, Player pPlayer, HolderBlockEntity pBlockEntity, ItemStack itemStack){
             pBlockEntity.setItem(INPUTSLOT, itemStack.split(1));
+            pLevel.gameEvent(pPlayer, GameEvent.BLOCK_CHANGE, pPos);
     }
     
-    public static void removeItem(Level pLevel,Player pPlayer, HolderBlockEntity pBlockEntity){
+    public static void removeItem(Level pLevel,Player pPlayer, HolderBlockEntity pBlockEntity, BlockPos pPos){
             ItemStack itemStack = pBlockEntity.removeItem(INPUTSLOT, 1);
             if (pPlayer.getInventory().add(itemStack)){
                 pPlayer.drop(itemStack, false);
         }
+        pLevel.gameEvent(pPlayer, GameEvent.BLOCK_CHANGE, pPos);
     }
     
     @Override

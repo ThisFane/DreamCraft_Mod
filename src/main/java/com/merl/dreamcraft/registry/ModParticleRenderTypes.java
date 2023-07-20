@@ -32,23 +32,5 @@ public interface ModParticleRenderTypes extends ParticleRenderType {
     };
     
     
-    ParticleRenderType MYEND = new ParticleRenderType() {
-        public void begin(BufferBuilder p_107462_, TextureManager p_107463_) {
-            RenderSystem.disableBlend();
-            RenderSystem.depthMask(false);
-            RenderSystem.setShader(GameRenderer::getRendertypeEndPortalShader);
-            RenderSystem.setShaderTexture(0, TextureAtlas.LOCATION_PARTICLES);
-            p_107462_.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
-        }
-        
-        public void end(Tesselator p_107451_) {
-            p_107451_.end();
-        }
-        
-        public String toString() {
-            return "MYEND";
-        }
-    };
-    
     
 }
